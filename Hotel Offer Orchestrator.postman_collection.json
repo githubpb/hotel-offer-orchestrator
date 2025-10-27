@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "e3b6b81e-a0b4-4a7b-a3bf-2f662a471e64",
+		"name": "Hotel Offer Orchestrator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40166401"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": {
+							"status": "ok",
+							"suppliers": {
+								"supplierA": true,
+								"supplierB": true
+							}
+						}
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/hotels?city=delhi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hotels"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "delhi"
+						}
+					]
+				}
+			},
+			"response": [
+							{
+								"hotelId": "b1",
+								"name": "Holtin",
+								"price": 5340,
+								"city": "delhi",
+								"commissionPct": 20
+							},
+							{
+								"hotelId": "a2",
+								"name": "Radison",
+								"price": 5900,
+								"city": "delhi",
+								"commissionPct": 13
+							},
+							{
+								"hotelId": "b2",
+								"name": "Taj",
+								"price": 7000,
+								"city": "delhi",
+								"commissionPct": 15
+							}
+						]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/hotels?city=delhi&minPrice=3000&maxPrice=6000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hotels"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "delhi"
+						},
+						{
+							"key": "minPrice",
+							"value": "3000"
+						},
+						{
+							"key": "maxPrice",
+							"value": "6000"
+						}
+					]
+				}
+			},
+			"response": [
+							{
+								"hotelId": "b1",
+								"name": "Holtin",
+								"price": 5340,
+								"city": "delhi",
+								"commissionPct": 20
+							},
+							{
+								"hotelId": "a2",
+								"name": "Radison",
+								"price": 5900,
+								"city": "delhi",
+								"commissionPct": 13
+							}
+						]
+		}
+	]
+}
